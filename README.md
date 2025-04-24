@@ -10,4 +10,4 @@ This repository serves as a activity journal whereby I attempt to build an LLM c
 
 ### Setting up vLLM to server a model
 
-podman pull docker.io/tweijian/vllm-cpu:0.8.4
+`podman pull docker.io/tweijian/vllm-cpu:0.8.4`
