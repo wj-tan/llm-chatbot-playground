@@ -14,12 +14,7 @@ This repository serves as a activity journal whereby I attempt to build an LLM c
 
 
 
-`podman run -p 8000:8000 docker.io/tweijian/vllm-cpu:0.8.4 vllm serve <model>`
+`podman run -d --name vllm-server -p 8000:8000 docker.io/tweijian/vllm-cpu:0.8.4`
 
 
-Example
-
-`podman run -p 8000:8000 docker.io/tweijian/vllm-cpu:0.8.4 vllm serve Qwen/Qwen2.5-1.5B-Instruct`
-
-
-`
+`podman exec -it vllm-server vllm serve Qwen/Qwen2.5-1.5B-Instruct`
