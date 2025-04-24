@@ -12,7 +12,7 @@ This repository serves as a activity journal whereby I attempt to build an LLM c
 
 
 `podman run -d --name vllm-server -p 8000:8000 --ipc=host vllm/vllm-openai:v0.8.4 `
-
+`sudo docker run --runtime nvidia --gpus all --ipc=host --env "HUGGING_FACE_HUB_TOKEN=$HF_TOKEN" --name vllm-server -d -p 8000:8000 vllm/vllm-openai:latest`
 
 `podman exec -it vllm-server vllm serve Qwen/Qwen2.5-1.5B-Instruct`
 
