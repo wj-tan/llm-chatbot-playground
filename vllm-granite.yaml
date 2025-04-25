@@ -1,26 +1,38 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: vllm-granite
+  name: granite-8b
+  namespace: default
+  labels:
+    app: granite-8b
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: vllm-granite
+      app: granite-8b
   template:
     metadata:
       labels:
-        app: vllm-granite
+        app: granite-8b
     spec:
+      volumes:
+      - name: cache-volume
+        persistentVolumeClaim:
+          claimName: vllm-models
+      # vLLM needs to access the host's shared memory for tensor parallel inference.
+      - name: shm
+        emptyDir:
+          medium: Memory
+          sizeLimit: "2Gi"
       containers:
-      - name: vllm
+      - name: granite-8b
         image: vllm/vllm-openai:latest
-        command: ["python3", "-m", "vllm.entrypoints.openai.api_server"]
-        args:
-          - "--model"
-          - "RedHatAI/granite-3.1-8b-instruct-quantized.w4a16"
+        command: ["/bin/sh", "-c"]
+        args: [
+          "vllm serve RedHatAI/granite-3.1-8b-instruct-quantized.w4a16 --trust-remote-code --enable-chunked-prefill --max_num_batched_tokens 1024"
+        ]
         env:
-        - name: HUGGINGFACE_TOKEN
+        - name: HUGGING_FACE_HUB_TOKEN
           valueFrom:
             secretKeyRef:
               name: hf-secret
@@ -29,16 +41,38 @@ spec:
         - containerPort: 8000
         resources:
           limits:
-            nvidia.com/gpu: 1
-      restartPolicy: Always
+            cpu: "10"
+            memory: 20G
+            nvidia.com/gpu: "1"
+          requests:
+            cpu: "2"
+            memory: 6G
+            nvidia.com/gpu: "1"
+        volumeMounts:
+        - mountPath: /root/.cache/huggingface
+          name: cache-volume
+        - name: shm
+          mountPath: /dev/shm
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 60
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 60
+          periodSeconds: 5
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: vllm-service
+  name: granite-8b-service
 spec:
   selector:
-    app: vllm-granite
+    app: granite-8b
   ports:
     - protocol: TCP
       port: 8000
@@ -47,11 +81,11 @@ spec:
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  name: vllm-route
+  name: granite-8b-route
 spec:
   to:
     kind: Service
-    name: vllm-service
+    name: granite-8b-service
   port:
     targetPort: 8000
   tls:
