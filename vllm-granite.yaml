@@ -44,7 +44,7 @@ spec:
         image: vllm/vllm-openai:latest
         command: ["/bin/sh", "-c"]
         args: [
-          "vllm serve facebook/opt-125m"
+          "vllm serve facebook/opt-125m" # Change facebook/opt-125m to any hugging face model e.g mistralai/Mistral-7B-Instruct-v0.3
         ]
         env:
         - name: HUGGING_FACE_HUB_TOKEN
