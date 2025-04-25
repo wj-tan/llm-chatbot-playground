@@ -106,3 +106,12 @@ spec:
     targetPort: 8000
   tls:
     termination: edge
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: hf-secret
+  namespace: default
+type: Opaque
+stringData:
+  token: "REPLACE_WITH_TOKEN"
