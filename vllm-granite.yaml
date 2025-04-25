@@ -29,6 +29,7 @@ spec:
       labels:
         app: granite-8b
     spec:
+      serviceAccountName: vllm-sa
       volumes:
       - name: cache-volume
         persistentVolumeClaim:
