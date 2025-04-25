@@ -29,7 +29,7 @@ spec:
       labels:
         app: granite-8b
     spec:
-      serviceAccountName: vllm-sa
+      serviceAccountName: vllm-sa # oc adm policy add-scc-to-user anyuid -z vllm-sa -n vllm-server
       volumes:
       - name: cache-volume
         persistentVolumeClaim:
