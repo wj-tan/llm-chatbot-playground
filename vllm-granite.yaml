@@ -32,7 +32,7 @@ spec:
       volumes:
       - name: cache-volume
         persistentVolumeClaim:
-          claimName: vllm-models
+          claimName: granite-8b-pvc
       # vLLM needs to access the host's shared memory for tensor parallel inference.
       - name: shm
         emptyDir:
