@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vllm-granite
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vllm-granite
+  template:
+    metadata:
+      labels:
+        app: vllm-granite
+    spec:
+      containers:
+      - name: vllm
+        image: vllm/vllm-openai:latest
+        command: ["python3", "-m", "vllm.entrypoints.openai.api_server"]
+        args:
+          - "--model"
+          - "RedHatAI/granite-3.1-8b-instruct-quantized.w4a16"
+        env:
+        - name: HUGGINGFACE_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: hf-secret
+              key: token
+        ports:
+        - containerPort: 8000
+        resources:
+          limits:
+            nvidia.com/gpu: 1
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vllm-service
+spec:
+  selector:
+    app: vllm-granite
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: vllm-route
+spec:
+  to:
+    kind: Service
+    name: vllm-service
+  port:
+    targetPort: 8000
+  tls:
+    termination: edge
