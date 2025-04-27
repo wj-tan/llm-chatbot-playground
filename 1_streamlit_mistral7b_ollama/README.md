@@ -17,7 +17,7 @@ It mimics a ChatGPT-style interface, running entirely on your own infrastructure
 Run the [`ollama_server.ipynb`](./ollama_server.ipynb) notebook in **Google Colab**.  
 Make sure to select a **T4 GPU runtime** (under `Runtime > Change runtime type > GPU > T4`).
 
-This will start an Ollama server with `mistral` loaded and exposed via public URL.
+This will start an Ollama server with `mistral:instruct` loaded and exposed via public URL `https://ollama.molodetz.nl/v1/`.
 
 Credits to https://molodetz.nl/project/uberlama.html crowd funded ollama server project.
 
