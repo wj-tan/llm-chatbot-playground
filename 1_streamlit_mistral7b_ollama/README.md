@@ -19,7 +19,7 @@ Make sure to select a **T4 GPU runtime** (under `Runtime > Change runtime type >
 
 This will start an Ollama server with `mistral` loaded and exposed via public URL.
 
-Credits to https://molodetz.nl/project/uberlama.html
+Credits to https://molodetz.nl/project/uberlama.html crowd funded ollama server project.
 
 ---
 
