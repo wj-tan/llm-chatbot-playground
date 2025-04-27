@@ -12,4 +12,6 @@ This repository showcases multiple methods of building and deploying Large Langu
    - A simple self-hosted chatbot UI using **Streamlit**, with **Mistral 7B Instruct** as the LLM model served by the **Ollama API** via a crowd sourced server.
    - **Run locally** or **containerized with Docker**.
 
+2. **[Streamlit + Mistral 7B + vLLM](https://github.com/wj-tan/llm-chatbot-playground/tree/main/2_streamlit_mistral7b_vllm)**
+   - Work in progress
 ---
