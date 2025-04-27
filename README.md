@@ -1,7 +1,7 @@
 # README
 
 
-This repository serves as a activity journal whereby I attempt to build an LLM chatbot with diffrent tools and framework.
+This repository serves as a activity journal whereby I attempt to build an LLM chatbot with different tools that are available.
 
 
 ## For workstation with GPU
