@@ -17,13 +17,3 @@ This repository showcases multiple methods of building and deploying Large Langu
      - Alternatively, build and run with Docker for a containerized version.
 
 ---
-
-## ⚙️ How to Get Started
-
-### Step 1: Clone the Repo
-
-Start by cloning the repository:
-
-```bash
-git clone https://github.com/wj-tan/vllm-demo.git
-cd vllm-demo
