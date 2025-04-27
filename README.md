@@ -1,4 +1,4 @@
-# vLLM Demo: Building LLM Chatbots
+# LLM Chatbot Playground
 
 This repository showcases multiple methods of building and deploying Large Language Model (LLM) chatbots, with different configurations for UI, backend APIs, and LLM models. The goal of this project is to provide simple, accessible examples of using different LLM technologies, including Streamlit UIs, OpenAI, Ollama, and more.
 
