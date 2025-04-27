@@ -9,11 +9,7 @@ This repository showcases multiple methods of building and deploying Large Langu
 ### Current Projects:
 
 1. **[Streamlit + Mistral 7B + Ollama](https://github.com/wj-tan/vllm-demo/tree/main/1_streamlit_mistral7b_ollama)**
-   - A simple self-hosted chatbot UI using **Streamlit**, with **Mistral 7B** as the LLM model served by the **Ollama API**.
+   - A simple self-hosted chatbot UI using **Streamlit**, with **Mistral 7B Instruct** as the LLM model served by the **Ollama API** via a crowd sourced server.
    - **Run locally** or **containerized with Docker**.
-   - Steps:
-     - [Start the Ollama Server in Google Colab](./1_streamlit_mistral7b_ollama/ollama_server.ipynb) (with T4 GPU).
-     - Run `streamlit run app.py` to interact with the chatbot.
-     - Alternatively, build and run with Docker for a containerized version.
 
 ---
