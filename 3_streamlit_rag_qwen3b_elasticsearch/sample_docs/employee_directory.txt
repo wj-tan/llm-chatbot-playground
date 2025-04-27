@@ -1,0 +1,32 @@
+Company: AI Dynamics Inc.
+Department: Engineering
+
+1. Name: Alice Tan
+   Title: Senior Machine Learning Engineer
+   Email: alice.tan@aidynamics.com
+   Location: Singapore
+   Skills: Python, PyTorch, NLP, LLM Fine-Tuning
+
+2. Name: Bryan Lee
+   Title: DevOps Engineer
+   Email: bryan.lee@aidynamics.com
+   Location: San Francisco, CA
+   Skills: Docker, Kubernetes, CI/CD, AWS
+
+3. Name: Clara Zhao
+   Title: Data Scientist
+   Email: clara.zhao@aidynamics.com
+   Location: Toronto, Canada
+   Skills: Pandas, SQL, Deep Learning, ML Ops
+
+4. Name: Daniel Kumar
+   Title: Software Engineer
+   Email: daniel.kumar@aidynamics.com
+   Location: Bangalore, India
+   Skills: JavaScript, React, Node.js, REST APIs
+
+5. Name: Emma Jansen
+   Title: Product Manager
+   Email: emma.jansen@aidynamics.com
+   Location: Amsterdam, Netherlands
+   Skills: Agile, UX, Data Analytics, Roadmapping
