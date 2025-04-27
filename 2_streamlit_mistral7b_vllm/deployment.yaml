@@ -1,3 +1,4 @@
+# Kubernetes Deployment manifest for a vllm server pod
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:

@@ -1,11 +1,3 @@
-# README
-
-
-This repository serves as a activity journal whereby I attempt to build an LLM chatbot
-
-
-## References
-
 ### Setting up an inference server with vLLM to serve a model
 
 `podman pull vllm/vllm-openai:v0.8.4`
