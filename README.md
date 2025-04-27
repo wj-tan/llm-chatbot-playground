@@ -14,4 +14,7 @@ This repository showcases multiple methods of building and deploying Large Langu
 
 2. **[Streamlit + Mistral 7B + vLLM](https://github.com/wj-tan/llm-chatbot-playground/tree/main/2_streamlit_mistral7b_vllm)**
    - Work in progress
+
+3. **[Streamlit + Qwen2.5 3B + RAG with Elasticsearch](https://github.com/wj-tan/llm-chatbot-playground/tree/main/2_streamlit_mistral7b_vllm)**
+   - Work in progress
 ---
