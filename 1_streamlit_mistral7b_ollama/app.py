@@ -7,9 +7,10 @@ client = OpenAI(
     base_url = 'https://ollama.molodetz.nl/v1/',
     api_key='ollama', # required, but unused
 )
+
+# Set default model
 if "openai_model" not in st.session_state:
     st.session_state["openai_model"] = "mistral:instruct"
-
 
 # Initialize a list to store chat history
 if "messages" not in st.session_state:
