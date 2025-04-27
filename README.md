@@ -1,40 +1,29 @@
-# README
+# vLLM Demo: Building LLM Chatbots
 
+This repository showcases multiple methods of building and deploying Large Language Model (LLM) chatbots, with different configurations for UI, backend APIs, and LLM models. The goal of this project is to provide simple, accessible examples of using different LLM technologies, including Streamlit UIs, OpenAI, Ollama, and more.
 
-This repository serves as a activity journal whereby I attempt to build an LLM chatbot with different tools that are available.
+---
 
+## 🧠 What is in this repo?
 
-## References
+### Current Projects:
 
-### Setting up an inference server with vLLM to serve a model
+1. **[Streamlit + Mistral 7B + Ollama](https://github.com/wj-tan/vllm-demo/tree/main/1_streamlit_mistral7b_ollama)**
+   - A simple self-hosted chatbot UI using **Streamlit**, with **Mistral 7B** as the LLM model served by the **Ollama API**.
+   - **Run locally** or **containerized with Docker**.
+   - Steps:
+     - [Start the Ollama Server in Google Colab](./1_streamlit_mistral7b_ollama/ollama_server.ipynb) (with T4 GPU).
+     - Run `streamlit run app.py` to interact with the chatbot.
+     - Alternatively, build and run with Docker for a containerized version.
 
-`podman pull vllm/vllm-openai:v0.8.4`
+---
 
+## ⚙️ How to Get Started
 
-`podman run -d --name vllm-server -p 8000:8000 --ipc=host vllm/vllm-openai:v0.8.4 `
-`sudo docker run --runtime nvidia --gpus all --ipc=host --env "HUGGING_FACE_HUB_TOKEN=$HF_TOKEN" --name vllm-server -d -p 8000:8000 vllm/vllm-openai:latest`
+### Step 1: Clone the Repo
 
-`podman exec -it vllm-server vllm serve Qwen/Qwen2.5-1.5B-Instruct`
+Start by cloning the repository:
 
-
-
-`docker run --runtime nvidia --gpus all \
-    -v ~/.cache/huggingface:/root/.cache/huggingface \
-    --env "HUGGING_FACE_HUB_TOKEN=<secret>" \
-    -p 8000:8000 \
-    --ipc=host \
-    vllm/vllm-openai:latest \
-    --model mistralai/Mistral-7B-v0.1`
-
-## For workstation with only CPU
-
-### Setting up an inference server with vLLM to serve a model
-
-`podman pull docker.io/tweijian/vllm-cpu:0.8.4`
-
-
-
-`podman run -d --name vllm-server -p 8000:8000 docker.io/tweijian/vllm-cpu:0.8.4`
-
-
-`podman exec -it vllm-server vllm serve Qwen/Qwen2.5-1.5B-Instruct`
+```bash
+git clone https://github.com/wj-tan/vllm-demo.git
+cd vllm-demo
