@@ -6,7 +6,7 @@ This is a simple, self-hosted chatbot app built with:
 - 🧠 **Mistral 7B** as the language model  
 - 🚀 **Ollama** to serve the model with an OpenAI-compatible API
 
-It mimics a ChatGPT-style interface, running entirely on your own infrastructure (or on free Colab GPU!).
+It mimics a ChatGPT-style interface, we will leverage on Google Colab with a T4 GPU to host our LLM (Its free).
 
 ---
 
