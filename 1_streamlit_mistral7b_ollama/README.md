@@ -38,7 +38,7 @@ Start Ollama Service
 ollama serve
 ```
 
-Ollama server and its API can be accessed via `http://localhost:11434/v1`
+Ollama server and its API can be accessed via `http://localhost:11434/v1` , you would need to edit the `app.py` , see optional section below.
 
 ---
 
