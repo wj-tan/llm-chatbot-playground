@@ -21,6 +21,25 @@ This will start an Ollama server with `mistral:instruct` loaded and exposed via 
 
 Credits to https://molodetz.nl/project/uberlama.html crowd funded ollama server project.
 
+### If you have a capable GPU you can host one yourself instead ###
+
+Install Ollama
+```bash
+curl https://ollama.com/install.sh | sh
+```
+
+Pull mistral model
+```bash
+ollama pull mistral:instruct
+```
+
+Start Ollama Service
+```bash
+ollama serve
+```
+
+Ollama server and its API can be accessed via `http://localhost:11434/v1`
+
 ---
 
 ### 🖥️ 2. Run the Streamlit Frontend
