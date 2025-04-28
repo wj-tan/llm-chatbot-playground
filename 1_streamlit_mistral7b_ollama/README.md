@@ -53,7 +53,7 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-## 🐳 Run the App with Docker
+## 🐳 Run the Streamlit Frontend with Docker
 
 You can also run this app fully containerized using Docker.
 
