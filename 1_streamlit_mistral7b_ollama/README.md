@@ -21,7 +21,7 @@ This will start an Ollama server with `mistral:instruct` loaded and exposed via 
 
 Credits to https://molodetz.nl/project/uberlama.html crowd funded ollama server project.
 
-### If you have a capable GPU you can host one yourself instead ###
+### Or if you prefer to host the LLM yourself instead ###
 
 Install Ollama
 ```bash
