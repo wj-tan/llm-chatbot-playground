@@ -76,7 +76,7 @@ If your Ollama server is running on a different endpoint, edit the base_url in a
 
 ```
 client = OpenAI(
-    base_url = 'https://<your-server-url>/v1/', # e.g http://localhost:11434/v1/
+    base_url = 'https://<your-server-url>/v1/',
     api_key='ollama',  # required, but unused, just put anything will do
 )
 ```
