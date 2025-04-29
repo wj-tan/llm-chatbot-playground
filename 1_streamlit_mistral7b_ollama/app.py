@@ -4,14 +4,17 @@ import os
 
 st.title("LLM Chatbot")
 
+base_url = os.getenv("LLM_ENDPOINT")
+openai_model = os.getenv("LLM_MODEL")
+
 client = OpenAI(
-    base_url = 'https://ollama.molodetz.nl/v1/',
+    base_url=base_url,
     api_key='ollama', # required, but unused
 )
 
 # Set default model
 if "openai_model" not in st.session_state:
-    st.session_state["openai_model"] = "mistral:instruct"
+    st.session_state["openai_model"] = openai_model
 
 # Initialize a list to store chat history
 if "messages" not in st.session_state:
