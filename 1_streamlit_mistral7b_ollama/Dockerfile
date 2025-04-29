@@ -1,10 +1,11 @@
 # Use the official Python image
-FROM python:3.11-slim
+FROM registry.access.redhat.com/ubi9/python-311:latest
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV LLM_ENDPOINT=https://ollama.molodetz.nl/v1/
+ENV LLM_MODEL=mistral:instruct
 
 # Set the working directory
 WORKDIR /app
