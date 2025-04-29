@@ -4,6 +4,7 @@ FROM python:3.11-slim
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
+ENV LLM_ENDPOINT=https://ollama.molodetz.nl/v1/
 
 # Set the working directory
 WORKDIR /app
