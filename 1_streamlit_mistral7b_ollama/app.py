@@ -1,7 +1,8 @@
 import streamlit as st
 from openai import OpenAI
+import os
 
-st.title("ChatGPT-like clone")
+st.title("LLM Chatbot")
 
 client = OpenAI(
     base_url = 'https://ollama.molodetz.nl/v1/',
