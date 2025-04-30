@@ -60,6 +60,8 @@ You can also run this app fully containerized using Docker.
 ### 🧱 Step 1: Build the Docker Image
 
 ```bash
+git clone https://github.com/wj-tan/vllm-demo.git
+cd vllm-demo/1_streamlit_mistral7b_ollama
 docker build -t streamlit-chatbot .
 docker run -p 8501:8501 streamlit-chatbot
 ```
