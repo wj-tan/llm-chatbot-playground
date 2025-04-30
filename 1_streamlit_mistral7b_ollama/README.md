@@ -72,13 +72,10 @@ docker run -p 8501:8501 streamlit-chatbot
 
 ### ⚙️ Optional: Customize the Ollama Server URL
 
-If your Ollama server is running on a different endpoint, edit the base_url in app.py:
+If your Ollama server is running on a different endpoint and using a different model, you can edit the env of the container during runtime:
 
 ```
-client = OpenAI(
-    base_url = 'https://<your-server-url>/v1/',
-    api_key='ollama',  # required, but unused, just put anything will do
-)
+docker run -p 8501:8501 -e LLM_ENDPOINT=<your_endpoint> -e LLM_MODEL=<your_model> streamlit-chatbot
 ```
 
 Then rebuild the Docker image for the change to take effect:
